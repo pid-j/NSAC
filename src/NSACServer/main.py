@@ -65,7 +65,7 @@ def cmd_hostdom() -> str:
     except (ValueError, IndexError):
         return "Website not found"
     
-    port = input("Enter port to host domain at: ")
+    port = input("Enter port to host domain at (default is 8000): ")
 
     try:
         port = int(port)
@@ -74,8 +74,12 @@ def cmd_hostdom() -> str:
     
     curpath = ".".join(domain)
     
-    print(f"Serving {curpath} at localhost:{port}")
-    httpserver = HTTPServer(("localhost", port), Handler)
+    ip = input("Enter IP to host domain at (default is localhost):")
+
+    if ip == "": ip = "localhost"
+
+    print(f"Serving {curpath} at {ip}:{port}")
+    httpserver = HTTPServer((ip, port), Handler)
 
     try:
         httpserver.serve_forever()
