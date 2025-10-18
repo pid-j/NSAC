@@ -1,13 +1,12 @@
-# NSAC - The NewSereneAccess Protocol
+<img width="1498" height="161" alt="debsruman" src="https://github.com/user-attachments/assets/99ecc51c-8103-48dc-b46e-11f19a14ffbd" />
 
-The NSAC protocol is a Python-based protocol.
+The NSAC (aka NewSereneAccess) protocol is a Python-based protocol.
 
 ## Requirements
 
-Python, requests, urllib, tkinter
+Python, requests, urllib, Tkinter
 
 ## Usage
 
-1. Download `main.py` from `src`
-2. Run `main.py`
-3. Use it to host pages and do WHOIS lookups!
+1. Download `NSACServer.py` from `src`
+2. Run `NSACServer.py`
