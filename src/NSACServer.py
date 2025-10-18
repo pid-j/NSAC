@@ -156,15 +156,25 @@ def cmd_exportc() -> str:
     global page_cache
     fn = asksaveasfilename(title="Export cache", filetypes=[("JSON", "*.json")])
 
+    if not fn: return "Failed to export file"
+    if not fn.endswith(".json"): fn += ".json"
+
     with open(fn, "w") as file:
         json.dump(page_cache, file)
+
+    return f"Exported {fn}"
 
 def cmd_importc() -> str:
     global page_cache
     fn = askopenfilename(title="Import cache", filetypes=[("JSON", "*.json")])
 
+    if not fn: return "Failed to import file"
+    if not fn.endswith(".json"): fn += ".json"
+
     with open(fn, "r") as file:
         page_cache = json.load(file)
+
+    return f"Imported {fn}"
 
 def main() -> None:
     print("NSACServer - Enter command")
