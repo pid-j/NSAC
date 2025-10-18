@@ -5,6 +5,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 CONTENT_URL = "https://raw.githubusercontent.com/pid-j/NSAC/refs/heads/main/web/content.json"
 PAGE_URL = "https://raw.githubusercontent.com/pid-j/NSAC/refs/heads/main/web/%s/%s"
+PAGE_URL2 = "https://raw.githubusercontent.com/pid-j/NSAC/refs/heads/main/web/%s"
 TLDS_URL = "https://raw.githubusercontent.com/pid-j/NSAC/refs/heads/main/web/tlds.txt"
 
 curpath = "example.nsac"
@@ -22,6 +23,20 @@ class Handler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(bytes(requests.get(
                     PAGE_URL % (path, path2)
+                ).text, "utf-8"))
+
+class Handler2(BaseHTTPRequestHandler):
+        def do_GET(self):
+                path = urllib.parse.urlparse(self.path).path
+
+                if len(path.split("/")) <= 2: path += "/"
+                if path.endswith("/"): path += "index.html"
+
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write(bytes(requests.get(
+                    PAGE_URL2 % path
                 ).text, "utf-8"))
 
 content = requests.get(CONTENT_URL)
@@ -89,11 +104,35 @@ def cmd_hostdom() -> str:
     del httpserver
     return "Stopped serving"
 
+def cmd_hostser() -> str:
+    port = input("Enter port to host server at (default is 8000): ")
+
+    try:
+        port = int(port)
+    except (ValueError, TypeError):
+        port = 8000
+    
+    ip = input("Enter IP to host server at (default is localhost): ")
+
+    if ip == "": ip = "localhost"
+
+    print(f"Hosting server at {ip}:{port}")
+    httpserver = HTTPServer((ip, port), Handler2)
+
+    try:
+        httpserver.serve_forever()
+    except KeyboardInterrupt:
+        httpserver.server_close()
+
+    del httpserver
+    return "Stopped serving"
+
 def main() -> None:
     print("NSACServer - Enter command")
     print("--------------------------")
     print("1 - WHOIS lookup")
     print("2 - Host domain")
+    print("3 - Host server")
     print("E - Exit")
 
     while True:
@@ -104,6 +143,8 @@ def main() -> None:
             print(cmd_whois())
         elif cmd == "2":
             print(cmd_hostdom())
+        elif cmd == "3":
+            print(cmd_hostser())
         elif cmd == "E":
             exit()
         else:
