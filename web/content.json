@@ -2,7 +2,7 @@
   {
     "registrar": "Registri PigeonDomains",
     "website": {
-      "dn": "example"
+      "dn": "example",
       "tld": "nsac"
     },
     "registryDate": [18, 10, 2025]
