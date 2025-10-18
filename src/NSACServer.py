@@ -25,13 +25,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
                 if path2 in page_cache.keys():
-                    self.wfile.write(page_cache[path2])
+                    self.wfile.write(bytes(page_cache[path2], "utf-8"))
                 else:
                     r = bytes(requests.get(
                         PAGE_URL % (path, path2)
                     ).text, "utf-8")
                     self.wfile.write(r)
-                    page_cache[path2] = r
+                    page_cache[path2] = str(r)
 
 class Handler2(BaseHTTPRequestHandler):
         def do_GET(self):
@@ -45,13 +45,13 @@ class Handler2(BaseHTTPRequestHandler):
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
                 if path in page_cache.keys():
-                    self.wfile.write(page_cache[path])
+                    self.wfile.write(bytes(page_cache[path], "utf-8"))
                 else:
                     r = bytes(requests.get(
                         PAGE_URL2 % path
                     ).text, "utf-8")
                     self.wfile.write(r)
-                    page_cache[path] = r
+                    page_cache[path] = str(r)
 
 content = requests.get(CONTENT_URL)
 content = json.loads(content.text)
