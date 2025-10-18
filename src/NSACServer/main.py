@@ -14,7 +14,7 @@ class Handler(BaseHTTPRequestHandler):
                 path = globals().get("curpath", "example.nsac")
                 path2 = urllib.parse.urlparse(self.path).path
 
-                if len(path2) == 0:
+                if path2 in ["/", ""]:
                     path2 = "index.html"
 
                 self.send_response(200)
