@@ -89,7 +89,7 @@ def cmd_hostdom() -> str:
     
     curpath = ".".join(domain)
     
-    ip = input("Enter IP to host domain at (default is localhost):")
+    ip = input("Enter IP to host domain at (default is localhost): ")
 
     if ip == "": ip = "localhost"
 
