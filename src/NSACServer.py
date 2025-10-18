@@ -48,7 +48,7 @@ class Handler2(BaseHTTPRequestHandler):
                     self.wfile.write(page_cache[path])
                 else:
                     r = bytes(requests.get(
-                        PAGE_URL % path
+                        PAGE_URL2 % path
                     ).text, "utf-8")
                     self.wfile.write(r)
                     page_cache[path] = r
