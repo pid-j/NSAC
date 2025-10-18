@@ -4,9 +4,7 @@ The NSAC protocol is a Python-based protocol.
 
 ## Requirements
 
-Python
-requests
-urllib
+Python, requests, urllib
 
 ## Usage
 
