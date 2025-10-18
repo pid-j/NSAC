@@ -1,5 +1,7 @@
 nsac
-dev
+png
+jpeg
+webp
 duck
 wigeon
 goose
@@ -21,3 +23,8 @@ stinky
 jaramana
 metro
 kualalumpur
+javascript
+python
+lua
+c
+cpp
