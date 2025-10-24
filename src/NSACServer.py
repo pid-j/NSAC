@@ -76,8 +76,8 @@ def cmd_whois() -> str:
               content[idx]["registryDate"][1],
               content[idx]["registryDate"][0])
     
-    return (f"Registrar: {content[idx].get("registrar", "N/A")}\n" \
-            f"Registrant: {content[idx].get("registrant", "N/A")}\n" \
+    return (f"Registrar: {content[idx].get('registrar', 'N/A')}\n" \
+            f"Registrant: {content[idx].get('registrant', 'N/A')}\n" \
             f"Registry Date: {date.date().isoformat()}")
 
 def cmd_hostdom(flush: bool = True) -> str:
