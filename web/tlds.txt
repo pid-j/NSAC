@@ -34,7 +34,6 @@ train
 mrt
 lrt
 brt
-choochoo
 ready
 set
 go
