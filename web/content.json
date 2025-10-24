@@ -14,5 +14,13 @@
       "tld": "png"
     },
     "registryDate": [18, 10, 2025]
+  },
+  {
+    "registrar": "Registri PigeonDomains",
+    "website": {
+      "dn": "games",
+      "tld": "ready"
+    },
+    "registryDate": [24, 10, 2025]
   }
 ]

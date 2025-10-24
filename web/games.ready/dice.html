@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+</head>
+<body>
+    <a href="/games.ready">Back to Home</a>
+    <span id="rolled">You Rolled: </span>
+    <button onclick="document.querySelector('#rolled').textContent = `You Rolled: {Math.floor(1 + Math.random() * 5)}`">Roll Dice</button>
+</body>
+</html>
