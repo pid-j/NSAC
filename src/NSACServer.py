@@ -80,6 +80,13 @@ def cmd_whois() -> str:
             f"Registrant: {content[idx].get('registrant', 'N/A')}\n" \
             f"Registry Date: {date.date().isoformat()}")
 
+def cmd_domains() -> str:
+    domains = []
+    for site in content:
+        domains.append(f"{site['website']['dn']}.{site['website']['tld']}")
+
+    return "\n".join(domains)
+
 def cmd_hostdom(flush: bool = True) -> str:
     global curpath
     domain = input("Enter domain name: ")
@@ -189,6 +196,7 @@ def main() -> None:
     print("--------------------------")
     print("X - Export cache")
     print("I - Import cache")
+    print("T - List domains")
     print("E - Exit")
 
     while True:
@@ -211,6 +219,8 @@ def main() -> None:
             print(cmd_exportc())
         elif cmd == "I":
             print(cmd_importc())
+        elif cmd == "T":
+            print(cmd_domains())
         elif cmd == "E":
             exit()
         else:
