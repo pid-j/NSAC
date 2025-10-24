@@ -39,3 +39,4 @@ ready
 set
 go
 terminal
+suite
