@@ -1,6 +1,7 @@
 [
   {
     "registrar": "Registri PigeonDomains",
+    "registrant": "pid-j",
     "website": {
       "dn": "example",
       "tld": "nsac"
@@ -9,6 +10,7 @@
   },
   {
     "registrar": "Registri PigeonDomains",
+    "registrant": "pid-j",
     "website": {
       "dn": "pigeon",
       "tld": "png"
@@ -17,9 +19,10 @@
   },
   {
     "registrar": "Registri PigeonDomains",
+    "registrant": "ChickenSuite",
     "website": {
-      "dn": "games",
-      "tld": "ready"
+      "dn": "chicken",
+      "tld": "terminal"
     },
     "registryDate": [24, 10, 2025]
   }
