@@ -6,7 +6,8 @@ The NSAC (aka NewSereneAccess) protocol is a Python-based protocol.
 
 If you want to host a server with `NSACServer.py`, you will require:
 Python, Tkinter, requests, http.server, and urllib.
-**! KEEP IN MIND THAT http.server IS INSECURE !**
+
+**KEEP IN MIND THAT http.server IS INSECURE!**
 
 On the other hand, you can browse the web with `NSACBrowser.py` requiring:
 Python, PyQt5, PyQtWebEngine, and requests.
