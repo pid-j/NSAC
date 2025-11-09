@@ -4,7 +4,7 @@ The NSAC (aka NewSereneAccess) protocol is a Python-based protocol.
 
 ## Forewarning
 
-This uses `http.server` which is not designed for production. Do <span style="color: #ff0000; font-weight: bolder">NOT</span> take this repository as a serious protocol.
+This uses `http.server` which is not designed for production. Do <b style="color: #ff0000r">NOT</b> take this repository as a serious protocol.
 
 ## Requirements
 
