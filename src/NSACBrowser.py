@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         if url.startswith("nsac://"):
             ourl = url
             url = url.replace("nsac://", "", 1)
-            if len(url.split("/")) <= 2: url += "/"
+            if len(url.split("/")) <= 1: url += "/"
             if url.endswith("/"): url += "index.html"
             url = PAGE_URL % url
             if url in page_cache.keys():
