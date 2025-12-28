@@ -39,3 +39,13 @@ set
 go
 terminal
 suite
+software
+from
+the
+river
+to
+sea
+palestine
+will
+be
+free
